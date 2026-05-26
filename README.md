@@ -5,73 +5,107 @@ Project collection of Jupyter notebooks for binary classification experiments.
 **Project Overview**
 
 - This repository contains two analysis notebooks exploring medical classification problems (Parkinson's and heart disease). Each notebook includes exploratory data analysis, preprocessing, model training, and evaluation.
+# ML_projects
 
-**Notebooks**
+[![License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
+[![Notebooks](https://img.shields.io/badge/notebooks-Jupyter-orange)](#)
 
-- `Copy_of_Parkinsons.ipynb` — EDA, preprocessing, feature engineering, model experiments for Parkinson's disease prediction.
-- `Heart_disease.ipynb` — EDA, preprocessing, model experiments for heart disease prediction.
+ML_projects — a small collection of reproducible Jupyter notebooks for medical binary classification experiments.
 
-**Requirements**
+Overview
+--------
 
-- Python 3.8 or newer
-- Common packages: numpy, pandas, scikit-learn, matplotlib, seaborn, jupyter
+- Two focused notebooks for exploratory data analysis, feature engineering, model training and evaluation:
+  - `Copy_of_Parkinsons.ipynb` — Parkinson's disease classification experiments.
+  - `Heart_disease.ipynb` — Heart disease classification experiments.
 
-Install a virtual environment and required packages:
+Why this repo
+--------------
+
+- Clean, self-contained notebooks that demonstrate common ML workflows: data cleaning, visualization, feature selection, model comparison, and simple deployment-ready exports (models/metrics).
+
+Quick Start
+-----------
+
+1. Create and activate a virtual environment:
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
+```
+
+2. Install dependencies:
+
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-If you don't have `requirements.txt`, install the main packages manually:
-
-```bash
-pip install numpy pandas scikit-learn matplotlib seaborn jupyter
-```
-
-**Usage**
-
-- Open the notebooks in Jupyter Notebook/Lab or VS Code and run the cells in order.
-- Example:
+3. Start Jupyter and open the notebooks:
 
 ```bash
 jupyter notebook
-# then open the notebook in your browser
 ```
 
-**Data**
+Data
+----
 
-- Datasets are not included in this repository. Place datasets under a `data/` folder at the repository root with the expected filenames used in the notebooks (examples below).
-- Recommended sources:
-  - Parkinson's dataset (UCI): https://archive.ics.uci.edu/ml/datasets/parkinsons
-  - Heart Disease (UCI — Cleveland): https://archive.ics.uci.edu/ml/datasets/Heart+Disease
+- Datasets are not included. Create a `data/` folder at the repository root and place the files used by the notebooks. Example filenames expected by the notebooks:
+  - `data/parkinsons.csv`
+  - `data/heart.csv`
 
-Expected example filenames (update notebook cells if your filenames differ):
+Recommended sources:
 
-- `data/parkinsons.csv`
-- `data/heart.csv`
+- Parkinson's UCI: https://archive.ics.uci.edu/ml/datasets/parkinsons
+- Heart Disease (Cleveland) UCI: https://archive.ics.uci.edu/ml/datasets/Heart+Disease
 
-Check the first cells of each notebook for the exact file path or data-loading code.
+Project layout
+--------------
 
-**Model Performance**
+```
+ML_projects/
+├── Copy_of_Parkinsons.ipynb
+├── Heart_disease.ipynb
+├── requirements.txt
+└── data/ (place datasets here)
+```
 
-Run the notebooks to produce metrics; record results here. Use the template below to summarize your best results.
+Usage & workflow
+----------------
 
-| Model               | Accuracy | Precision | Recall | F1-score | ROC AUC |
-| ------------------- | -------: | --------: | -----: | -------: | ------: |
-| Logistic Regression |        — |         — |      — |        — |       — |
-| Random Forest       |        — |         — |      — |        — |       — |
-| XGBoost / LightGBM  |        — |         — |      — |        — |       — |
+- Open a notebook, run cells top-to-bottom. Each notebook contains a 'Notes' and 'Data' cell at the top explaining required files and columns.
+- Use the provided evaluation cells to compare models and record final metrics in the 'Model Performance' section below.
 
-Replace the placeholders above with the final numbers from your experiments.
+Model performance (template)
+----------------------------
 
-**Notes**
+Fill this table with your best experiment results after running the notebooks:
 
-- Results and reproducibility depend on the data used and package versions. Pin versions in `requirements.txt` for consistent runs.
-- If you want, I can run the notebooks and fill the table (requires the datasets in `data/`).
+| Model | Accuracy | Precision | Recall | F1-score | ROC AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | — | — | — | — | — |
+| Random Forest | — | — | — | — | — |
+| XGBoost / LightGBM | — | — | — | — | — |
 
-**Author**
+Contributing
+------------
 
-- Repository owner: Shreya-Shukla27
+- Improvements and fixes are welcome. Suggested workflow:
+  1. Fork the repo
+  2. Create a branch: `git checkout -b feature/your-change`
+  3. Open a PR with a clear description
+
+License
+-------
+
+- MIT by default. Update `LICENSE` if you require a different license.
+
+Contact
+-------
+
+- Repository owner: `Shreya-Shukla27` — open an issue for questions or feature requests.
+
+Notes
+-----
+
+- If you want, I can run the notebooks and populate the 'Model performance' table — add datasets to `data/` and tell me to run them.
