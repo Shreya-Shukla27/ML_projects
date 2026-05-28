@@ -1,37 +1,32 @@
 # ML_projects
 
-Project collection of Jupyter notebooks for binary classification experiments.
-
-**Project Overview**
-
-- This repository contains two analysis notebooks exploring medical classification problems (Parkinson's and heart disease). Each notebook includes exploratory data analysis, preprocessing, model training, and evaluation.
-# ML_projects
-
 [![License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
 [![Notebooks](https://img.shields.io/badge/notebooks-Jupyter-orange)](#)
 
-ML_projects — a small collection of reproducible Jupyter notebooks for medical binary classification experiments.
+ML_projects — a small collection of reproducible Jupyter notebooks and helper scripts for medical binary classification experiments.
 
-Overview
---------
+## Overview
 
-- Two focused notebooks for exploratory data analysis, feature engineering, model training and evaluation:
+- Notebooks and scripts for exploratory data analysis, preprocessing, model training and evaluation.
+- Notable files:
   - `Copy_of_Parkinsons.ipynb` — Parkinson's disease classification experiments.
   - `Heart_disease.ipynb` — Heart disease classification experiments.
+  - `compute_metrics.py` — helper to compute/save evaluation metrics.
 
-Why this repo
---------------
+## Quick Start
 
-- Clean, self-contained notebooks that demonstrate common ML workflows: data cleaning, visualization, feature selection, model comparison, and simple deployment-ready exports (models/metrics).
-
-Quick Start
------------
-
-1. Create and activate a virtual environment:
+1. Create and activate a virtual environment (Windows example):
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
+```
+
+Or on macOS / Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 2. Install dependencies:
@@ -47,65 +42,60 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-Data
-----
+## Data
 
-- Datasets are not included. Create a `data/` folder at the repository root and place the files used by the notebooks. Example filenames expected by the notebooks:
-  - `data/parkinsons.csv`
-  - `data/heart.csv`
+- This repository includes `content/parkinsons.csv` (see `content/`). The heart disease dataset is not included by default.
+- If you want to run the heart-disease notebook, place the dataset in `content/` and name it `heart.csv`, or update the notebook's data-paths accordingly.
 
 Recommended sources:
 
 - Parkinson's UCI: https://archive.ics.uci.edu/ml/datasets/parkinsons
 - Heart Disease (Cleveland) UCI: https://archive.ics.uci.edu/ml/datasets/Heart+Disease
 
-Project layout
---------------
+## Project layout
 
 ```
 ML_projects/
 ├── Copy_of_Parkinsons.ipynb
 ├── Heart_disease.ipynb
+├── compute_metrics.py
 ├── requirements.txt
-└── data/ (place datasets here)
+└── content/ (datasets; `parkinsons.csv` included)
 ```
 
-Usage & workflow
-----------------
+## Usage & workflow
 
-- Open a notebook, run cells top-to-bottom. Each notebook contains a 'Notes' and 'Data' cell at the top explaining required files and columns.
-- Use the provided evaluation cells to compare models and record final metrics in the 'Model Performance' section below.
+- Open a notebook and run cells top-to-bottom. Notebooks contain explanatory cells near the top describing required files and columns.
+- Use `compute_metrics.py` to load results and generate consistent metric reports when running models programmatically.
 
-Model performance (template)
-----------------------------
+## Model performance
 
-Fill this table with your best experiment results after running the notebooks:
+This section is intentionally left for you to populate with results from your experiments. To generate consistent metrics programmatically, run your training/evaluation cells in the notebooks or use the `compute_metrics.py` helper and copy the numbers here.
 
-| Model | Accuracy | Precision | Recall | F1-score | ROC AUC |
-|---|---:|---:|---:|---:|---:|
-| Logistic Regression | — | — | — | — | — |
-| Random Forest | — | — | — | — | — |
-| XGBoost / LightGBM | — | — | — | — | — |
+Example (run locally):
 
-Contributing
-------------
+```bash
+python compute_metrics.py --input content/parkinsons.csv --output metrics/parkinsons_metrics.json
+# then open `metrics/parkinsons_metrics.json` and paste the values into this section
+```
+
+If you prefer to remove this section entirely, tell me and I will delete it.
+
+## Contributing
 
 - Improvements and fixes are welcome. Suggested workflow:
   1. Fork the repo
   2. Create a branch: `git checkout -b feature/your-change`
   3. Open a PR with a clear description
 
-License
--------
+## License
 
 - MIT by default. Update `LICENSE` if you require a different license.
 
-Contact
--------
+## Contact
 
 - Repository owner: `Shreya-Shukla27` — open an issue for questions or feature requests.
 
-Notes
------
+## Next steps
 
-- If you want, I can run the notebooks and populate the 'Model performance' table — add datasets to `data/` and tell me to run them.
+- If you'd like, I can run the Parkinson's notebook and populate the 'Model performance' table using the included `content/parkinsons.csv`. Tell me if you want me to run it now.
